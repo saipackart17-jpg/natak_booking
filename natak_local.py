@@ -1,7 +1,13 @@
 import streamlit as st
 import os
 from openpyxl import Workbook, load_workbook
+'import streamlit as st
 
+password = st.text_input("Enter Booking Password", type="password")
+
+if password != "natak123":
+    st.warning("Please enter correct password to book seat")
+    st.stop()
 FILE_NAME = "natak_bookings.xlsx"
 
 # Create Excel file if not exists
